@@ -11,13 +11,7 @@ import androidx.lifecycle.ViewModel
 class viewModel : ViewModel() {
 
 }
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin URL-DEL-REPOSITORIO
-git branch -M main
-git push -u origin main
-git push --set-upstream origin master
+
 
 
 

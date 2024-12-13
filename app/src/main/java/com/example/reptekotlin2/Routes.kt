@@ -1,17 +1,25 @@
 package com.example.reptekotlin2
 
-sealed class Routes(val route: String) {
-    // Definim la ruta per accedir a la primera pantalla sense paràmetres
-    object Pantalla1 : Routes("pantalla1")
 
-    // Definim la ruta per accedir a la segona pantalla amb el paràmetre 'nom'
-    object Pantalla2 : Routes("pantalla2/{nom}") {
-        fun createRoute(nom: String) = "pantalla2/$nom"
-    }
 
-    // Definim la ruta per accedir a la tercera pantalla amb el paràmetres 'nom', 'salutacio', 'edat'
-    object Pantalla3 : Routes("pantalla3/{nom}/{salutacio}/{edat}") {
-        fun createRoute(nom: String, salutacio: String, edat: Int) = "pantalla3/$nom/$salutacio/$edat"
+import androidx.compose.runtime.Composable
+import androidx.navigation.NavHost
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.example.reptekotlin2.view.LaunchScreen
+import com.example.reptekotlin2.view.Screen2
+
+@Composable
+fun Routes(navController: NavHostController) {
+    NavHost(navController = navController, startDestination = "launchScreen") {
+        // Ruta para la Launch Screen
+        composable("launchScreen") { LaunchScreen(navController) }
+
+        // Ruta para la pantalla 2
+        composable("screen2") { Screen2(navController) }
     }
+}
+
 
 }

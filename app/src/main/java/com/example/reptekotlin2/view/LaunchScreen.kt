@@ -1,16 +1,38 @@
 package com.example.reptekotlin2.view
 
-class LaunchScreen {
+import android.widget.Button
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
 
-    Button(
-    onClick = { },
-    colors = ButtonDefaults.buttonColors(
-    containerColor = Color.Blue,
-    contentColor = Color.Red
-    ),
-    border = BorderStroke(5.dp, Color.Green)
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import org.w3c.dom.Text
+
+@Composable
+fun LaunchScreen(onNavigate: () -> Unit) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Push")
-    }
+        // Imagen del logo
+        Image(
+            painter = painterResource(id = com.example.reptekotlin2.view.dragonball),
+            contentDescription = null, // No necesitamos descripción
+            modifier = Modifier.size(200.dp)
+        )
 
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Botón "Entrar"
+        Button(onClick = onNavigate) {
+            Text(text = "Entrar", fontSize = 16.sp)
+        }
+    }
 }
