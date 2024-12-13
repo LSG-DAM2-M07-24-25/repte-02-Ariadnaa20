@@ -1,19 +1,20 @@
 package com.example.reptekotlin2.view
 
-import android.widget.Button
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import org.w3c.dom.Text
+import androidx.navigation.NavHostController
+import com.example.reptekotlin2.R
 
 @Composable
-fun LaunchScreen(onNavigate: () -> Unit) {
+fun LaunchScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -23,16 +24,18 @@ fun LaunchScreen(onNavigate: () -> Unit) {
     ) {
         // Imagen del logo
         Image(
-            painter = painterResource(id = com.example.reptekotlin2.view.dragonball),
-            contentDescription = null, // No necesitamos descripción
+            painter = painterResource(id = R.drawable.imagen),
+            contentDescription = null,
             modifier = Modifier.size(200.dp)
         )
 
         Spacer(modifier = Modifier.height(24.dp))
 
         // Botón "Entrar"
-        Button(onClick = onNavigate) {
-            Text(text = "Entrar", fontSize = 16.sp)
+        Button(onClick = {
+            navController.navigate("screen2") // Navegar a la siguiente pantalla
+        }) {
+            Text(text = "Entrar")
         }
     }
 }
