@@ -2,7 +2,6 @@ package com.example.reptekotlin2.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,7 +21,7 @@ fun LaunchScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Imagen del logo
+        // imatge logo
         Image(
             painter = painterResource(id = R.drawable.imagen),
             contentDescription = null,
@@ -31,9 +30,9 @@ fun LaunchScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Botón "Entrar"
+        // Botó "Entrar"
         Button(onClick = {
-            navController.navigate("screen2") // Navegar a la siguiente pantalla
+            navController.navigate("Screen2")
         }) {
             Text(text = "Entrar")
         }
