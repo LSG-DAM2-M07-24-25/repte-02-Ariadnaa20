@@ -12,6 +12,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.reptekotlin2.R
 
+
+
 @Composable
 fun LaunchScreen(navController: NavHostController) {
     Column(
@@ -21,7 +23,7 @@ fun LaunchScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // imatge logo
+
         Image(
             painter = painterResource(id = R.drawable.imagen),
             contentDescription = null,
@@ -30,10 +32,8 @@ fun LaunchScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Botó "Entrar"
-        Button(onClick = {
-            navController.navigate("Screen2")
-        }) {
+
+        Button(onClick = { navController.navigate(Routes.SCREEN2) }) {
             Text(text = "Entrar")
         }
     }

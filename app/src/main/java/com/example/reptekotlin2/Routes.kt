@@ -1,28 +1,8 @@
-package com.example.reptekotlin2
+object Routes {
+    const val LAUNCH_SCREEN = "launch_screen"
+    const val SCREEN2 = "screen2"
+    const val SCREEN3 = "screen3/{characterImage}"
+    const val SCREEN4 = "screen4/{characterName}/{characterImage}"
 
-
-
-import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import com.example.reptekotlin2.view.LaunchScreen
-import com.example.reptekotlin2.view.Screen2
-
-@Composable
-fun Routes(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = "launchScreen") {
-        // Ruta para Launch Screen
-        composable("launchScreen") {
-            LaunchScreen(navController = navController)
-        }
-
-        // Ruta para Screen2
-        composable("Screen2") {
-            Screen2(navController = navController)
-        }
-    }
 }
-
-
 
